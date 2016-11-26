@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeNote.iOS", "iOS\EdgeNot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeNote.Droid", "Droid\EdgeNote.Droid.csproj", "{B1FBF0F9-52FC-426B-9A1D-A81CECC6243C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeNoteLibrary", "..\EdgeNoteLibrary\EdgeNoteLibrary.csproj", "{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,18 @@ Global
 		{B1FBF0F9-52FC-426B-9A1D-A81CECC6243C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{B1FBF0F9-52FC-426B-9A1D-A81CECC6243C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{B1FBF0F9-52FC-426B-9A1D-A81CECC6243C}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Release|iPhone.Build.0 = Release|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

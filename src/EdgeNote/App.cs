@@ -1,12 +1,11 @@
 ﻿using Xamarin.Forms;
 
-namespace EdgeNote
+namespace EdgeNote.UI
 {
     public partial class App : Application
     {
         public App()
         {
-            InitializeComponent();
 
             MainPage = new EdgeNotePage();
         }

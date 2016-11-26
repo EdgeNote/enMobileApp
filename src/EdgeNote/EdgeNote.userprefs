@@ -1,14 +1,29 @@
 ﻿<Properties StartupConfiguration="{D8C47652-8E4D-459F-802A-359393F24418}|Default">
   <MonoDevelop.Ide.ItemProperties.EdgeNote.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.607F1099-E981-4F85-A86C-5399CD4A7D37" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="../EdgeNoteLibrary/DAOs/AbstractDao.cs">
+    <Files>
+      <File FileName="../EdgeNoteLibrary/Objects/Node.cs" Line="2" Column="20" />
+      <File FileName="../EdgeNoteLibrary/Objects/AbstractObject.cs" Line="4" Column="20" />
+      <File FileName="../EdgeNoteLibrary/Objects/Edge.cs" Line="2" Column="20" />
+      <File FileName="../EdgeNoteLibrary/Objects/LabelSet.cs" Line="4" Column="20" />
+      <File FileName="../EdgeNoteLibrary/Objects/Label.cs" Line="2" Column="20" />
+      <File FileName="../EdgeNoteLibrary/Objects/Property.cs" Line="2" Column="20" />
+      <File FileName="../EdgeNoteLibrary/Constants/LabelDataTypes.cs" Line="2" Column="11" />
+      <File FileName="../EdgeNoteLibrary/DAOs/AbstractDao.cs" Line="3" Column="24" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EdgeNote" expanded="True">
-            <Node name="EdgeNote" expanded="True">
-              <Node name="Packages" expanded="True" />
+            <Node name="EdgeNote" expanded="True" />
+            <Node name="EdgeNote.iOS" expanded="True" />
+            <Node name="EdgeNoteLibrary" expanded="True">
+              <Node name="Constants" expanded="True" />
+              <Node name="DAOs" expanded="True">
+                <Node name="AbstractDao.cs" selected="True" />
+              </Node>
+              <Node name="Objects" expanded="True" />
             </Node>
-            <Node name="EdgeNote.iOS" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>
