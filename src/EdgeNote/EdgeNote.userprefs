@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{D8C47652-8E4D-459F-802A-359393F24418}|Default">
+  <MonoDevelop.Ide.ItemProperties.EdgeNote.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.607F1099-E981-4F85-A86C-5399CD4A7D37" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EdgeNote" expanded="True">
+            <Node name="EdgeNote" expanded="True">
+              <Node name="Packages" expanded="True" />
+            </Node>
+            <Node name="EdgeNote.iOS" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

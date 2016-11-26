@@ -1,0 +1,5 @@
+bin
+src/EdgeNote/Droid/obj
+src/EdgeNote/iOS/obj
+src/EdgeNote/obj
+src/EdgeNote/packages
