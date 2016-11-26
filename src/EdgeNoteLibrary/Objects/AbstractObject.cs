@@ -7,5 +7,35 @@ namespace EdgeNote.Library.Objects
     {
         [BsonId]
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// The date and time the edge was created in db
+        /// </summary>
+        /// <value>The created on.</value>
+        public DateTime CreatedOn { get; set; }
+
+        /// <summary>
+        /// UserId of the user that created the record.
+        /// </summary>
+        /// <value>The created by identifier.</value>
+        public Guid CreatedById { get; set; }
+
+        /// <summary>
+        /// The date and time the edge was last modified.
+        /// </summary>
+        /// <value>The modified on.</value>
+        public DateTime ModifiedOn { get; set; }
+
+        /// <summary>
+        /// UserId of the user that last modified the record.
+        /// </summary>
+        /// <value>The modified by identifier.</value>
+        public Guid ModifiedById { get; set; }
+
+        /// <summary>
+        /// Indicates that the record has been deleted.
+        /// </summary>
+        /// <value><c>true</c> if deleted; otherwise, <c>false</c>.</value>
+        public bool Deleted { get; set; }
     }
 }

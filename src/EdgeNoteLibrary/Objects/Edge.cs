@@ -16,12 +16,6 @@ namespace EdgeNote.Library.Objects
         public Guid RelatedNodeId { get; set; }
 
         /// <summary>
-        /// The date and time the edge was created in db
-        /// </summary>
-        /// <value>The created on.</value>
-        public DateTime CreatedOn { get; set; }
-
-        /// <summary>
         /// The date and time the edge was established in reality 
         /// </summary>
         /// <value>The established on.</value>

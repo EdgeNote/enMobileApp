@@ -42,7 +42,7 @@ namespace EdgeNote.Library.Daos
         /// Persists then publishes
         /// </summary>
         /// <param name="_item">Item.</param>
-        public void Persist(T _item)
+        public void Persist(Guid _userId, T _item)
         {
             DateTime now = DateTime.Now;
 
@@ -55,11 +55,14 @@ namespace EdgeNote.Library.Daos
 
             if (existing == null)
             {
+                _item.CreatedById = _userId;
                 _item.CreatedOn = now;
+                _item.ModifiedById = _userId;
                 _item.ModifiedOn = now;
 
                 Insert(_item);
             } else {
+                _item.ModifiedById = _userId;
                 _item.ModifiedOn = now;
 
                 Update(_item);
@@ -99,33 +102,18 @@ namespace EdgeNote.Library.Daos
             return items.ToList();
         }
 
-        /// <summary>
-        /// Deletes then queues the item 
-        /// </summary>
-        /// <param name="_id">Identifier.</param>
-        public void Delete(Guid _id)
+        public void Delete(Guid _userId, Guid _id)
         {
             T item = Get(_id);
 
-            if (item != null)
+            if (item != null
+                && !item.Deleted)
             {
-                Query query = Query.EQ("_id", _id);
-                m_Collection.Delete(query);
-            }
-        }
+                item.Deleted = true;
+                item.ModifiedOn = DateTime.UtcNow;
+                item.ModifiedById = _userId;
 
-        /// <summary>
-        /// Deletes the item without queueing
-        /// </summary>
-        /// <param name="_id">Identifier.</param>
-        public void DeleteDirect(Guid _id)
-        {
-            T item = Get(_id);
-
-            if (item != null)
-            {
-                Query query = Query.EQ("_id", _id);
-                m_Collection.Delete(query);
+                Update(item);
             }
         }
 
