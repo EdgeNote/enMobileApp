@@ -1,0 +1,7 @@
+/SourceCode/EdgeNote/enMobileApp/src/EdgeNoteLibrary/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile111.AssemblyAttribute.cs
+/SourceCode/EdgeNote/enMobileApp/src/EdgeNoteLibrary/bin/Debug/EdgeNoteLibrary.dll.mdb
+/SourceCode/EdgeNote/enMobileApp/src/EdgeNoteLibrary/bin/Debug/EdgeNoteLibrary.dll
+/SourceCode/EdgeNote/enMobileApp/src/EdgeNoteLibrary/obj/Debug/EdgeNoteLibrary.dll
+/SourceCode/EdgeNote/enMobileApp/src/EdgeNoteLibrary/obj/Debug/EdgeNoteLibrary.dll.mdb
+/SourceCode/EdgeNote/enMobileApp/src/EdgeNoteLibrary/bin/Debug/LiteDB.Core.dll
+/SourceCode/EdgeNote/enMobileApp/src/EdgeNoteLibrary/bin/Debug/Newtonsoft.Json.dll

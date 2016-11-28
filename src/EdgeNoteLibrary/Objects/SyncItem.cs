@@ -1,10 +1,12 @@
 ﻿using System;
 namespace EdgeNote.Library.Objects
 {
-    public class SyncedItem
+    public class SyncItem
     {
-        public SyncedItem()
-        {
-        }
+        public string ObjectType { get; set; }
+
+        public Guid ItemId { get; set; }
+
+        public Guid VersionGuid { get; set; }
     }
 }

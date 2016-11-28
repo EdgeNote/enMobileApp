@@ -28,10 +28,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="App.cs" />
+    <Compile Include="EdgeNoteApp.cs" />
+    <Compile Include="Managers\IPlatformManager.cs" />
+    <Compile Include="Network\ENRestRequest.cs" />
+    <Compile Include="Network\ENResponseStatus.cs" />
+    <Compile Include="Network\ENRestResponse.cs" />
+    <Compile Include="Network\ENRestMethods.cs" />
+    <Compile Include="Controls\ENButton.cs" />
+    <Compile Include="Controls\ENFormButton.cs" />
+    <Compile Include="Controls\ENHeader.cs" />
+    <Compile Include="Controls\ENButtonBar.cs" />
+    <Compile Include="Controls\ENTextEntry.cs" />
+    <Compile Include="Controls\ENLabel.cs" />
+    <Compile Include="Constants\UIConstants.cs" />
+    <Compile Include="Delegates\TextChangedDelegate.cs" />
+    <Compile Include="Managers\EdgeNoteManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Objects\" />
+    <Folder Include="Managers\" />
+    <Folder Include="Network\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Delegates\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

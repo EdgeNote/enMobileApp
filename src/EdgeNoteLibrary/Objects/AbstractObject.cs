@@ -37,5 +37,11 @@ namespace EdgeNote.Library.Objects
         /// </summary>
         /// <value><c>true</c> if deleted; otherwise, <c>false</c>.</value>
         public bool Deleted { get; set; }
+
+        /// <summary>
+        /// Gets or sets the version GUID.
+        /// </summary>
+        /// <value>The version GUID.</value>
+        public Guid VersionGuid { get; set; }
     }
 }

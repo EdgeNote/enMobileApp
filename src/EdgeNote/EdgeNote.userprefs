@@ -1,30 +1,44 @@
 ﻿<Properties StartupConfiguration="{D8C47652-8E4D-459F-802A-359393F24418}|Default">
   <MonoDevelop.Ide.ItemProperties.EdgeNote.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.607F1099-E981-4F85-A86C-5399CD4A7D37" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../EdgeNoteLibrary/Constants/ObjectTypes.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Helpers/Reachability.cs">
     <Files>
-      <File FileName="../EdgeNoteLibrary/Objects/Node.cs" Line="2" Column="20" />
-      <File FileName="../EdgeNoteLibrary/Objects/AbstractObject.cs" Line="36" Column="56" />
-      <File FileName="../EdgeNoteLibrary/Objects/Edge.cs" Line="16" Column="48" />
-      <File FileName="../EdgeNoteLibrary/Objects/LabelSet.cs" Line="4" Column="20" />
-      <File FileName="../EdgeNoteLibrary/Objects/Label.cs" Line="2" Column="20" />
-      <File FileName="../EdgeNoteLibrary/Objects/Property.cs" Line="2" Column="20" />
+      <File FileName="../EdgeNoteLibrary/Constants/ObjectTypes.cs" Line="10" Column="51" />
       <File FileName="../EdgeNoteLibrary/Constants/LabelDataTypes.cs" Line="2" Column="11" />
-      <File FileName="../EdgeNoteLibrary/DAOs/AbstractDao.cs" Line="91" Column="10" />
-      <File FileName="../EdgeNoteLibrary/Objects/User.cs" Line="10" Column="33" />
-      <File FileName="../EdgeNoteLibrary/Objects/SyncSet.cs" Line="10" Column="42" />
-      <File FileName="../EdgeNoteLibrary/Objects/SyncItem.cs" Line="6" Column="9" />
-      <File FileName="../EdgeNoteLibrary/Constants/ObjectTypes.cs" Line="6" Column="1" />
+      <File FileName="../EdgeNoteLibrary/DAOs/AbstractDao.cs" Line="55" Column="48" />
+      <File FileName="EdgeNoteApp.cs" Line="7" Column="34" />
+      <File FileName="Controls/ENButton.cs" Line="5" Column="20" />
+      <File FileName="Managers/IPlatformManager.cs" Line="4" Column="22" />
+      <File FileName="Controls/ENButtonBar.cs" Line="10" Column="18" />
+      <File FileName="Constants/UIConstants.cs" Line="27" Column="31" />
+      <File FileName="Controls/ENFormButton.cs" Line="8" Column="18" />
+      <File FileName="Controls/ENHeader.cs" Line="55" Column="13" />
+      <File FileName="Managers/EdgeNoteManager.cs" Line="1" Column="1" />
+      <File FileName="iOS/Managers/PlatformManager.cs" Line="10" Column="43" />
+      <File FileName="iOS/Helpers/Reachability.cs" Line="7" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EdgeNote" expanded="True">
-            <Node name="EdgeNote" expanded="True" />
-            <Node name="EdgeNote.iOS" expanded="True" />
-            <Node name="EdgeNoteLibrary" expanded="True">
-              <Node name="Constants" expanded="True">
-                <Node name="ObjectTypes.cs" selected="True" />
+            <Node name="EdgeNote" expanded="True">
+              <Node name="Constants" expanded="True" />
+              <Node name="Controls" expanded="True" />
+              <Node name="Delegates" expanded="True" />
+              <Node name="Managers" expanded="True" />
+              <Node name="Network" expanded="True" />
+            </Node>
+            <Node name="EdgeNote.iOS" expanded="True">
+              <Node name="Packages" expanded="True" />
+              <Node name="Helpers" expanded="True">
+                <Node name="Reachability.cs" selected="True" />
               </Node>
+              <Node name="Managers" expanded="True" />
+            </Node>
+            <Node name="EdgeNoteLibrary" expanded="True">
+              <Node name="References" expanded="True">
+                <Node name="From Packages" expanded="True" />
+              </Node>
+              <Node name="Constants" expanded="True" />
               <Node name="DAOs" expanded="True" />
               <Node name="Objects" expanded="True" />
             </Node>

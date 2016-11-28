@@ -52,6 +52,7 @@ namespace EdgeNote.Library.Daos
             }
 
             T existing = Get(_item.Id);
+            _item.VersionGuid = Guid.NewGuid();
 
             if (existing == null)
             {
