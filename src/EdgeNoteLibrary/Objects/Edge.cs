@@ -1,7 +1,7 @@
 ﻿using System;
 namespace EdgeNote.Library.Objects
 {
-    public class Edge : AbstractObject
+    public class Edge : AbstractVersionedObject
     {
         /// <summary>
         /// Node that this edge primarily connects to

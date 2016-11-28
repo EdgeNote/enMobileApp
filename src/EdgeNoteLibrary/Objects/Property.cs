@@ -1,7 +1,7 @@
 ﻿using System;
 namespace EdgeNote.Library.Objects
 {
-    public class Property : AbstractObject
+    public class Property : AbstractVersionedObject
     {
         public Guid NodeId { get; set; }
 

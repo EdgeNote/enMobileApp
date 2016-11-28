@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using EdgeNote.Library.Objects;
+using EdgeNote.UI.Constants;
 using EdgeNote.UI.Daos;
 using EdgeNote.UI.Objects;
 

@@ -63,6 +63,7 @@
     <Compile Include="Cells\AbstractBaseCell.cs" />
     <Compile Include="Data\MenuListData.cs" />
     <Compile Include="Managers\ApiManager.cs" />
+    <Compile Include="Constants\SettingConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Objects\" />

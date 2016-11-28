@@ -3,8 +3,10 @@ using RestSharp;
 using EdgeNote.UI.Managers;
 using EdgeNote.iOS.Helpers;
 using EdgeNote.UI.Network;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
-namespace ATMobile.iOS.Managers
+namespace EdgeNote.iOS.Managers
 {
     public class PlatformManager : IPlatformManager
     {
@@ -24,6 +26,30 @@ namespace ATMobile.iOS.Managers
                 }
 
                 return true;
+            }
+        }
+
+        public string ApiHost
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string DataFolder
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string ImageFolder
+        {
+            get
+            {
+                throw new NotImplementedException();
             }
         }
 
@@ -95,6 +121,26 @@ namespace ATMobile.iOS.Managers
             }
 
             throw new ArgumentException("Unexpected rest method");
+        }
+
+        public string GetLocalImageFilename(string _filename)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetLocalThumbnailFilename(string _filename)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SaveImage(ImageSource _imageSource, string _filename)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GenerateThumbnail(string _imageFilename, string _thumbnailFilename)
+        {
+            throw new NotImplementedException();
         }
     }
 }

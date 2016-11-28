@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EdgeNote.Library.Objects
 {
-    public class SyncSet
+    public class SyncSet : AbstractObject
     {
         public SyncSet()
         {

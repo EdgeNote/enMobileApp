@@ -1,17 +1,12 @@
 ﻿<Properties StartupConfiguration="{D8C47652-8E4D-459F-802A-359393F24418}|Default">
   <MonoDevelop.Ide.ItemProperties.EdgeNote.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.607F1099-E981-4F85-A86C-5399CD4A7D37" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Managers/SettingManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Managers/PlatformManager.cs">
     <Files>
-      <File FileName="EdgeNoteApp.cs" Line="32" Column="32" />
-      <File FileName="Managers/EdgeNoteManager.cs" Line="25" Column="31" />
-      <File FileName="../EdgeNoteLibrary/Objects/User.cs" Line="16" Column="9" />
-      <File FileName="Managers/SettingManager.cs" Line="27" Column="20" />
-      <File FileName="Constants/UIConstants.cs" Line="27" Column="31" />
-      <File FileName="Forms/MainForm.cs" Line="23" Column="52" />
-      <File FileName="Interfaces/IMainForm.cs" Line="13" Column="1" />
-      <File FileName="Objects/MenuOption.cs" Line="3" Column="22" />
-      <File FileName="Data/MenuListData.cs" Line="56" Column="4" />
-      <File FileName="Managers/ApiManager.cs" Line="6" Column="51" />
+      <File FileName="Managers/SettingManager.cs" Line="130" Column="51" />
+      <File FileName="Constants/SettingConstants.cs" Line="1" Column="22" />
+      <File FileName="iOS/AppDelegate.cs" Line="17" Column="33" />
+      <File FileName="iOS/Managers/PlatformManager.cs" Line="11" Column="18" />
+      <File FileName="Managers/EdgeNoteManager.cs" Line="16" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,13 +21,11 @@
               <Node name="Delegates" expanded="True" />
               <Node name="Forms" expanded="True" />
               <Node name="Interfaces" expanded="True" />
-              <Node name="Managers" expanded="True">
-                <Node name="SettingManager.cs" selected="True" />
-              </Node>
+              <Node name="Managers" expanded="True" />
               <Node name="Network" expanded="True" />
               <Node name="Objects" expanded="True" />
             </Node>
-            <Node name="EdgeNote.iOS" expanded="True">
+            <Node name="EdgeNote.iOS" expanded="True" selected="True">
               <Node name="Packages" expanded="True" />
               <Node name="Helpers" expanded="True" />
               <Node name="Managers" expanded="True" />

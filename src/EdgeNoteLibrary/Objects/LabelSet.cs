@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EdgeNote.Library.Objects
 {
-    public class LabelSet : AbstractObject
+    public class LabelSet : AbstractVersionedObject
     {
         public LabelSet()
         {

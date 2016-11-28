@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using EdgeNote.iOS.Managers;
+using EdgeNote.UI;
 using Foundation;
 using UIKit;
 
@@ -14,7 +12,9 @@ namespace EdgeNote.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            LoadApplication(new App());
+            PlatformManager pm = new PlatformManager();
+
+            LoadApplication(new EdgeNoteApp(pm));
 
             return base.FinishedLaunching(app, options);
         }

@@ -1,12 +1,12 @@
 ﻿using System;
 using LiteDB;
+using EdgeNote.Library.Objects;
 using System.Collections.Generic;
 using System.Linq;
-using EdgeNote.Library.Objects;
 
 namespace EdgeNote.Library.Daos
 {
-    public abstract class AbstractDao<T> : IDisposable where T : AbstractObject, new()
+    public abstract class AbstractVersionedDao<T> : IDisposable where T : AbstractVersionedObject, new()
     {
         private LiteDatabase m_Database;
         protected LiteCollection<T> m_Collection;
@@ -15,7 +15,7 @@ namespace EdgeNote.Library.Daos
 
         public abstract void BuildIndexes();
 
-        protected AbstractDao(LiteDatabase _database)
+        protected AbstractVersionedDao(LiteDatabase _database)
         {
             m_Database = _database;
 
@@ -42,7 +42,7 @@ namespace EdgeNote.Library.Daos
         /// Persists then publishes
         /// </summary>
         /// <param name="_item">Item.</param>
-        public void Persist(T _item)
+        public void Persist(Guid _userId, T _item)
         {
             DateTime now = DateTime.Now;
 
@@ -52,11 +52,20 @@ namespace EdgeNote.Library.Daos
             }
 
             T existing = Get(_item.Id);
+            _item.VersionGuid = Guid.NewGuid();
 
             if (existing == null)
             {
+                _item.CreatedById = _userId;
+                _item.CreatedOn = now;
+                _item.ModifiedById = _userId;
+                _item.ModifiedOn = now;
+
                 Insert(_item);
             } else {
+                _item.ModifiedById = _userId;
+                _item.ModifiedOn = now;
+
                 Update(_item);
             }
         }
@@ -94,33 +103,18 @@ namespace EdgeNote.Library.Daos
             return items.ToList();
         }
 
-        /// <summary>
-        /// Deletes then queues the item 
-        /// </summary>
-        /// <param name="_id">Identifier.</param>
-        public void Delete(Guid _id)
+        public void Delete(Guid _userId, Guid _id)
         {
             T item = Get(_id);
 
-            if (item != null)
+            if (item != null
+                && !item.Deleted)
             {
-                Query query = Query.EQ("_id", _id);
-                m_Collection.Delete(query);
-            }
-        }
+                item.Deleted = true;
+                item.ModifiedOn = DateTime.UtcNow;
+                item.ModifiedById = _userId;
 
-        /// <summary>
-        /// Deletes the item without queueing
-        /// </summary>
-        /// <param name="_id">Identifier.</param>
-        public void DeleteDirect(Guid _id)
-        {
-            T item = Get(_id);
-
-            if (item != null)
-            {
-                Query query = Query.EQ("_id", _id);
-                m_Collection.Delete(query);
+                Update(item);
             }
         }
 
