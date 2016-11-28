@@ -1,5 +1,6 @@
 ﻿using EdgeNote.Library.Objects;
 using EdgeNote.UI.Managers;
+using HydrantWiki.Forms;
 using Xamarin.Forms;
 
 namespace EdgeNote.UI
@@ -22,7 +23,7 @@ namespace EdgeNote.UI
             DataFolder = m_PlatformManager.DataFolder;
             ImageFolder = m_PlatformManager.ImageFolder;
 
-            HWManager manager = HWManager.GetInstance();
+            EdgeNoteManager manager = EdgeNoteManager.GetInstance();
             manager.PlatformManager = m_PlatformManager;
 
             User = manager.SettingManager.GetUser();

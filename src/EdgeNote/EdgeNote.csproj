@@ -43,6 +43,26 @@
     <Compile Include="Constants\UIConstants.cs" />
     <Compile Include="Delegates\TextChangedDelegate.cs" />
     <Compile Include="Managers\EdgeNoteManager.cs" />
+    <Compile Include="Managers\SettingManager.cs" />
+    <Compile Include="Objects\Setting.cs" />
+    <Compile Include="DAOs\SettingDao.cs" />
+    <Compile Include="Forms\MainForm.cs" />
+    <Compile Include="Forms\About.cs" />
+    <Compile Include="Forms\AbstractPage.cs" />
+    <Compile Include="Forms\MenuPage.cs" />
+    <Compile Include="Constants\AboutConstants.cs" />
+    <Compile Include="Constants\DisplayConstants.cs" />
+    <Compile Include="Forms\ENNavigationPage.cs" />
+    <Compile Include="Interfaces\IValidatedPage.cs" />
+    <Compile Include="Forms\DefaultForm.cs" />
+    <Compile Include="Interfaces\IMainForm.cs" />
+    <Compile Include="Objects\MenuOption.cs" />
+    <Compile Include="Controls\MenuListView.cs" />
+    <Compile Include="Controls\AbstractListView.cs" />
+    <Compile Include="Cells\MenuCell.cs" />
+    <Compile Include="Cells\AbstractBaseCell.cs" />
+    <Compile Include="Data\MenuListData.cs" />
+    <Compile Include="Managers\ApiManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Objects\" />
@@ -52,6 +72,10 @@
     <Folder Include="Forms\" />
     <Folder Include="Constants\" />
     <Folder Include="Delegates\" />
+    <Folder Include="DAOs\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Data\" />
+    <Folder Include="Cells\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

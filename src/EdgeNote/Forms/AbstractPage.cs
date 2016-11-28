@@ -1,7 +1,7 @@
-﻿using HydrantWiki.Constants;
+﻿using EdgeNote.UI.Constants;
 using Xamarin.Forms;
 
-namespace HydrantWiki.Forms
+namespace EdgeNote.UI.Forms
 {
     public abstract class AbstractPage : ContentPage
     {

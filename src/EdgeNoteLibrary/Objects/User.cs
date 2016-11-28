@@ -9,5 +9,11 @@ namespace EdgeNote.Library.Objects
 
         public string Username { get; set; }
 
+        public string AuthorizationToken { get; set; }
+
+        public string DisplayName { get; set; }
+
+        public string UserType { get; set; }
+
     }
 }

@@ -1,9 +1,8 @@
 ﻿using System;
-using ATMobile.iOS.Helpers;
-using ATMobile.Interfaces;
-using ATMobile.Network;
 using RestSharp;
 using EdgeNote.UI.Managers;
+using EdgeNote.iOS.Helpers;
+using EdgeNote.UI.Network;
 
 namespace ATMobile.iOS.Managers
 {
@@ -28,7 +27,7 @@ namespace ATMobile.iOS.Managers
             }
         }
 
-        public ATRestResponse SendRestRequest(ATRestRequest _request)
+        public ENRestResponse SendRestRequest(ENRestRequest _request)
         {
             //TODO save client in dictionary based on host
             RestClient client = new RestClient(_request.Host);
@@ -51,7 +50,7 @@ namespace ATMobile.iOS.Managers
             var response = client.Execute(request);
 
             //Create Response
-            ATRestResponse atResponse = new ATRestResponse();
+            ENRestResponse atResponse = new ENRestResponse();
 
             //Process Headers, set status and body
             foreach (var parameter in response.Headers)
@@ -64,34 +63,34 @@ namespace ATMobile.iOS.Managers
             return atResponse;
         }
 
-        private ATResponseStatus GetStatus(ResponseStatus status)
+        private ENResponseStatus GetStatus(ResponseStatus status)
         {
             switch (status)
             {
             case ResponseStatus.None:
-                return ATResponseStatus.None;
+                return ENResponseStatus.None;
             case ResponseStatus.Aborted:
-                return ATResponseStatus.Aborted;
+                return ENResponseStatus.Aborted;
             case ResponseStatus.Completed:
-                return ATResponseStatus.Completed;
+                return ENResponseStatus.Completed;
             case ResponseStatus.Error:
-                return ATResponseStatus.Error;
+                return ENResponseStatus.Error;
             case ResponseStatus.TimedOut:
-                return ATResponseStatus.Error;
+                return ENResponseStatus.Error;
             }
 
             throw new ArgumentException("Unexpected rest status");
         }
 
-        private Method GetMethod(ATRestMethods method)
+        private Method GetMethod(ENRestMethods method)
         {
             switch (method)
             {
-            case ATRestMethods.Post:
+            case ENRestMethods.Post:
                 return Method.POST;
-            case ATRestMethods.Get:
+            case ENRestMethods.Get:
                 return Method.GET;
-            case ATRestMethods.Delete:
+            case ENRestMethods.Delete:
                 return Method.DELETE;
             }
 

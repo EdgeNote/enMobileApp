@@ -66,7 +66,7 @@ namespace EdgeNote.UI.Controls
 
         public void SetRightButton(ENButton button)
         {
-            int left = HydrantWikiApp.ScreenWidth - 70;
+            int left = EdgeNoteApp.ScreenWidth - 70;
 
             AbsoluteLayout.SetLayoutBounds(
                 button,
