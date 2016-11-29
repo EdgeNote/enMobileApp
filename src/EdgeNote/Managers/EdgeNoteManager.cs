@@ -56,6 +56,14 @@ namespace EdgeNote.UI.Managers
             }
         }
 
+        public ApiManager ApiManager
+        {
+            get
+            {
+                return m_ApiManager;
+            }
+        }
+
         public LiteDatabase Database
         {
             get

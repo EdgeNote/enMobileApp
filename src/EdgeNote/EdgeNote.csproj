@@ -64,6 +64,9 @@
     <Compile Include="Data\MenuListData.cs" />
     <Compile Include="Managers\ApiManager.cs" />
     <Compile Include="Constants\SettingConstants.cs" />
+    <Compile Include="Objects\AppConfiguration.cs" />
+    <Compile Include="Objects\LogglyMessage.cs" />
+    <Compile Include="Network\ENFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Objects\" />
@@ -91,6 +94,9 @@
     <Reference Include="LiteDB.Core">
       <HintPath>..\..\bin\LiteDB.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -100,6 +106,9 @@
       <Project>{FE7B73E0-9AE8-4F81-ABFA-E1D71CFC750D}</Project>
       <Name>EdgeNoteLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppConfiguration.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

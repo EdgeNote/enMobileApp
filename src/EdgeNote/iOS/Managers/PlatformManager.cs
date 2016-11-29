@@ -5,6 +5,13 @@ using EdgeNote.iOS.Helpers;
 using EdgeNote.UI.Network;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.IO;
+using UIKit;
+using Foundation;
+using CoreGraphics;
+using System.Drawing;
+using EdgeNote.UI.Objects;
+using Xamarin.Forms.Platform.iOS;
 
 namespace EdgeNote.iOS.Managers
 {
@@ -12,6 +19,18 @@ namespace EdgeNote.iOS.Managers
     {
         public PlatformManager()
         {
+            string dataFolder = DataFolder;
+
+            if (!Directory.Exists(dataFolder))
+            {
+                Directory.CreateDirectory(dataFolder);
+            }
+
+            string imagesFolder = ImageFolder;
+            if (!Directory.Exists(imagesFolder))
+            {
+                Directory.CreateDirectory(imagesFolder);
+            }
         }
 
         public bool HasNetworkConnectivity
@@ -33,7 +52,8 @@ namespace EdgeNote.iOS.Managers
         {
             get
             {
-                throw new NotImplementedException();
+                AppConfiguration appConfig = AppConfiguration.GetInstance();
+                return appConfig.ApiUrl;
             }
         }
 
@@ -41,7 +61,8 @@ namespace EdgeNote.iOS.Managers
         {
             get
             {
-                throw new NotImplementedException();
+                string rootAppFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                return Path.Combine(rootAppFolder, "Library", "ENMobile");
             }
         }
 
@@ -49,7 +70,8 @@ namespace EdgeNote.iOS.Managers
         {
             get
             {
-                throw new NotImplementedException();
+                string rootAppFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                return Path.Combine(rootAppFolder, "Library", "ENMobileImage");
             }
         }
 
@@ -125,22 +147,105 @@ namespace EdgeNote.iOS.Managers
 
         public string GetLocalImageFilename(string _filename)
         {
-            throw new NotImplementedException();
+            string jpgFilename = Path.Combine(ImageFolder, _filename);
+            return jpgFilename;
         }
 
         public string GetLocalThumbnailFilename(string _filename)
         {
-            throw new NotImplementedException();
+            string rootAppFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string jpgFilename = Path.Combine(rootAppFolder, "Library", "ENMobileThumbnail", _filename);
+            return jpgFilename;
         }
 
-        public Task SaveImage(ImageSource _imageSource, string _filename)
+        public static byte[] ResizeImage(byte[] imageData, float maxDimension, int quality)
         {
-            throw new NotImplementedException();
+            UIImage originalImage = ImageFromByteArray(imageData);
+
+
+            float oldWidth = (float)originalImage.Size.Width;
+            float oldHeight = (float)originalImage.Size.Height;
+            float scaleFactor = 0f;
+
+            if (oldWidth > oldHeight)
+            {
+                scaleFactor = maxDimension / oldWidth;
+            } else
+            {
+                scaleFactor = maxDimension / oldHeight;
+            }
+
+            float newHeight = oldHeight * scaleFactor;
+            float newWidth = oldWidth * scaleFactor;
+
+            //create a 24bit RGB image
+            using (CGBitmapContext context = new CGBitmapContext(IntPtr.Zero,
+                (int)newWidth, (int)newHeight, 8,
+                (int)(4 * newWidth), CGColorSpace.CreateDeviceRGB(),
+                CGImageAlphaInfo.PremultipliedFirst))
+            {
+
+                RectangleF imageRect = new RectangleF(0, 0, newWidth, newHeight);
+
+                // draw the image
+                context.DrawImage(imageRect, originalImage.CGImage);
+
+                UIImage resizedImage = UIImage.FromImage(context.ToImage());
+
+                // save the image as a jpeg
+                return resizedImage.AsJPEG((float)quality).ToArray();
+            }
         }
+
 
         public void GenerateThumbnail(string _imageFilename, string _thumbnailFilename)
         {
-            throw new NotImplementedException();
+            byte[] imageData = File.ReadAllBytes(_imageFilename);
+
+            byte[] thumbnailData = ResizeImage(imageData, 60, 80);
+
+            File.WriteAllBytes(_thumbnailFilename, thumbnailData);
         }
+
+        public static UIImage ImageFromByteArray(byte[] data)
+        {
+            if (data == null)
+            {
+                return null;
+            }
+
+            UIImage image;
+            try
+            {
+                image = new UIImage(NSData.FromArray(data));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Image load failed: " + e.Message);
+                return null;
+            }
+            return image;
+        }
+
+        public async Task SaveImage(ImageSource _imageSource, string _filename)
+        {
+            var renderer = new StreamImagesourceHandler();
+
+            var photo = await renderer.LoadImageAsync(_imageSource);
+
+            string jpgFilename = GetLocalImageFilename(_filename);
+
+            NSData imgData = photo.AsJPEG();
+            NSError err = null;
+
+            if (imgData.Save(jpgFilename, false, out err))
+            {
+                Console.WriteLine("saved as " + jpgFilename);
+            } else {
+                Console.WriteLine("NOT saved as " + jpgFilename + " because " + err.LocalizedDescription);
+            }
+        }
+
+
     }
 }

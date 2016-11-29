@@ -1,22 +1,75 @@
-﻿using EdgeNote.iOS.Managers;
+﻿using System;
+using EdgeNote.iOS.Managers;
 using EdgeNote.UI;
+using EdgeNote.UI.Managers;
 using Foundation;
+using LiteDB;
+using LiteDB.Platform;
 using UIKit;
+using XLabs.Forms;
+using XLabs.Forms.Services;
+using XLabs.Ioc;
+using XLabs.Platform.Device;
+using XLabs.Platform.Services;
+using XLabs.Platform.Services.Email;
+using XLabs.Platform.Services.Geolocation;
+using XLabs.Platform.Services.Media;
 
 namespace EdgeNote.iOS
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public partial class AppDelegate : XFormsApplicationDelegate
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+            SetIoc();
 
-            PlatformManager pm = new PlatformManager();
+            var hwApp = new EdgeNoteApp(new PlatformManager());
+            LoadApplication(hwApp);
 
-            LoadApplication(new EdgeNoteApp(pm));
+            EdgeNoteApp.ScreenWidth = (int)UIScreen.MainScreen.Bounds.Width;
+            EdgeNoteApp.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;
+
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void SetIoc()
+        {
+            Xamarin.Forms.Forms.Init();
+            Xamarin.FormsMaps.Init();
+
+            LitePlatform.Initialize(new LitePlatformiOS());
+
+            var app = new XFormsAppiOS();
+            app.Init(this);
+
+            var resolverContainer = new SimpleContainer();
+
+            resolverContainer.Register<IDevice>(t => AppleDevice.CurrentDevice)
+                .Register<IDisplay>(t => t.Resolve<IDevice>().Display)
+                .Register<IFontManager>(t => new FontManager(t.Resolve<IDisplay>()))
+                .Register<IGeolocator>(t => new Geolocator())
+                .Register<ITextToSpeechService, TextToSpeechService>()
+                .Register<IEmailService, EmailService>()
+                .Register<IMediaPicker, MediaPicker>()
+                .Register<ISecureStorage, SecureStorage>()
+                .Register<IDependencyContainer>(t => resolverContainer);
+
+            Resolver.SetResolver(resolverContainer.GetResolver());
+        }
+
+        void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            try
+            {
+                //EdgeNoteManager.GetInstance().ApiManager.Log(LogLevels.Exception, e.ToString());
+            }
+            catch
+            {
+                //Eat exception
+            }
         }
     }
 }
