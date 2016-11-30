@@ -1,6 +1,8 @@
-bin
 src/EdgeNote/Droid/obj
 src/EdgeNote/iOS/obj
 src/EdgeNote/obj
 src/EdgeNote/packages
 AppConfiguration.json
+src/EdgeNote/bin
+src/EdgeNote/iOS/bin
+src/EdgeNoteLibrary/bin
