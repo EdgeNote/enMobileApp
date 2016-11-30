@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using EdgeNote.Library.Objects;
 
-namespace EdgeNote.Library.Daos
+namespace EdgeNote.UI.Daos
 {
     public abstract class AbstractDao<T> : IDisposable where T : AbstractObject, new()
     {

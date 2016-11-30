@@ -8,5 +8,7 @@ namespace EdgeNote.Library.Objects
         public Guid ItemId { get; set; }
 
         public Guid VersionGuid { get; set; }
+
+        public string SerializedObject { get; set; }
     }
 }

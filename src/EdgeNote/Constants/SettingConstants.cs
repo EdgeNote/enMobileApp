@@ -13,5 +13,7 @@
         public const string DisplayName = "DisplayName";
 
         public const string TagCount = "TagCount";
+
+		public const string LastSyncSet = "LastSyncSet";
     }
 }

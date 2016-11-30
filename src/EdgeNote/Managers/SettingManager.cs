@@ -108,6 +108,21 @@ namespace EdgeNote.UI.Managers
             return null;
         }
 
+        public long GetLongSetting(string _name)
+        {
+            Setting setting = GetSetting(_name);
+
+            if (setting == null) return 0;
+
+            long output;
+            if (long.TryParse(setting.Value, out output))
+            {
+                return output;
+            }
+
+            return 0;
+        }
+
         public int GetIntSetting(string _name)
         {
             Setting setting = GetSetting(_name);
@@ -240,6 +255,16 @@ namespace EdgeNote.UI.Managers
                 SetDisplayName(user.DisplayName);
                 SetUserType(user.UserType);
             }
+        }
+
+        public long GetLastSyncSet()
+        {
+            return GetLongSetting(SettingConstants.LastSyncSet);
+        }
+
+        public void SetLastSyncSet(long lastSyncSet)
+        {
+            SetSetting(SettingConstants.LastSyncSet, lastSyncSet.ToString());
         }
     }
 }

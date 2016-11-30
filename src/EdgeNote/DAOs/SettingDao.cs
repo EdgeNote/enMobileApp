@@ -1,5 +1,4 @@
-﻿using EdgeNote.Library.Daos;
-using EdgeNote.UI.Objects;
+﻿using EdgeNote.UI.Objects;
 using LiteDB;
 
 namespace EdgeNote.UI.Daos

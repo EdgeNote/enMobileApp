@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using EdgeNote.Library.Objects;
 using EdgeNote.UI.Network;
 using EdgeNote.UI.Objects;
+using EdgeNote.UI.ResponseObjects;
 using Newtonsoft.Json;
 
 namespace EdgeNote.UI.Managers
@@ -12,6 +15,36 @@ namespace EdgeNote.UI.Managers
         public ApiManager(EdgeNoteManager _manager)
         {
             m_ENManager = _manager;
+        }
+
+        /// <summary>
+        /// Returns a list of the sync sets that this machine needs
+        /// </summary>
+        /// <returns>The sync sets.</returns>
+        /// <param name="lastSyncSet">Last sync set.</param>
+        public List<long> GetSyncSets(long lastSyncSet)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// Returns the requested sync set
+        /// </summary>
+        /// <returns>The sync set.</returns>
+        /// <param name="syncSet">Sync set.</param>
+        public SyncSet GetSyncSet(long syncSet)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// Saves a sync set to the server
+        /// </summary>
+        /// <returns>The sync set.</returns>
+        /// <param name="syncSet">Sync set.</param>
+        public SaveSyncSetResponse SaveSyncSet(SyncSet syncSet)
+        {
+            return null;
         }
 
         public void Log(string prefix, string _message)
@@ -43,7 +76,6 @@ namespace EdgeNote.UI.Managers
             {
                 //Eat error
             }
-
         }
     }
 }
