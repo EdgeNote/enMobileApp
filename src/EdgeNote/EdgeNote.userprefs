@@ -1,16 +1,24 @@
 ﻿<Properties StartupConfiguration="{D8C47652-8E4D-459F-802A-359393F24418}|Default">
-  <MonoDevelop.Ide.ItemProperties.EdgeNote.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3161EAF2-6964-4D6E-857E-7CF279D5A007" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Daos/UserDao.cs">
+  <MonoDevelop.Ide.ItemProperties.EdgeNote.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.607F1099-E981-4F85-A86C-5399CD4A7D37" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Forms/LabelSetsForm.cs">
     <Files>
-      <File FileName="Daos/EdgeDao.cs" Line="9" Column="13" />
-      <File FileName="Daos/LabelDao.cs" Line="9" Column="13" />
-      <File FileName="Daos/AbstractDao.cs" Line="7" Column="26" />
-      <File FileName="Daos/AbstractVersionedDao.cs" Line="7" Column="26" />
-      <File FileName="Daos/LabelSetDao.cs" Line="9" Column="13" />
-      <File FileName="Daos/NodeDao.cs" Line="9" Column="13" />
-      <File FileName="Daos/PropertyDao.cs" Line="9" Column="13" />
-      <File FileName="Daos/SettingDao.cs" Line="1" Column="1" />
-      <File FileName="Daos/UserDao.cs" Line="4" Column="31" />
+      <File FileName="DAOs/EdgeDao.cs" Line="9" Column="17" />
+      <File FileName="DAOs/LabelDao.cs" Line="9" Column="18" />
+      <File FileName="DAOs/AbstractDao.cs" Line="7" Column="26" />
+      <File FileName="DAOs/AbstractVersionedDao.cs" Line="7" Column="26" />
+      <File FileName="DAOs/LabelSetDao.cs" Line="9" Column="20" />
+      <File FileName="DAOs/NodeDao.cs" Line="9" Column="18" />
+      <File FileName="DAOs/PropertyDao.cs" Line="9" Column="20" />
+      <File FileName="DAOs/SettingDao.cs" Line="1" Column="1" />
+      <File FileName="DAOs/UserDao.cs" Line="7" Column="39" />
+      <File FileName="Data/MenuListData.cs" Line="36" Column="13" />
+      <File FileName="Forms/NodesForm.cs" Line="8" Column="51" />
+      <File FileName="Constants/DisplayConstants.cs" Line="15" Column="40" />
+      <File FileName="Forms/LabelsForm.cs" Line="8" Column="43" />
+      <File FileName="Forms/UsersForm.cs" Line="9" Column="13" />
+      <File FileName="Forms/UserForm.cs" Line="9" Column="13" />
+      <File FileName="Forms/AccountForm.cs" Line="8" Column="44" />
+      <File FileName="Forms/LabelSetsForm.cs" Line="6" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

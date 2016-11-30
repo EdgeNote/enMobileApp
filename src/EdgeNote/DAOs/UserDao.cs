@@ -1,9 +1,10 @@
 ﻿using System;
 using EdgeNote.Library.Objects;
+using LiteDB;
 
 namespace EdgeNote.UI.Daos
 {
-    public class UserDao : AbstractVersionedDao<User>
+    public class UserDao : AbstractDao<User>
     {
         public UserDao(LiteDatabase _db) : base(_db)
         {

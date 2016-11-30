@@ -1,11 +1,12 @@
 ﻿using System;
 using EdgeNote.Library.Objects;
+using LiteDB;
 
 namespace EdgeNote.UI.Daos
 {
     public class LabelDao : AbstractVersionedDao<Label>
     {
-        public LabelDao(LiteDatabase _db) 
+        public LabelDao(LiteDatabase _db)
             : base(_db)
         {
         }
@@ -20,7 +21,7 @@ namespace EdgeNote.UI.Daos
 
         public override void BuildIndexes()
         {
-            
+
         }
     }
 }

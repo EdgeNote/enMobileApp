@@ -87,6 +87,12 @@
     <Compile Include="Daos\UserDao.cs" />
     <Compile Include="Objects\Edge.cs" />
     <Compile Include="Daos\EdgeDao.cs" />
+    <Compile Include="Forms\NodesForm.cs" />
+    <Compile Include="Forms\LabelsForm.cs" />
+    <Compile Include="Forms\UsersForm.cs" />
+    <Compile Include="Forms\UserForm.cs" />
+    <Compile Include="Forms\AccountForm.cs" />
+    <Compile Include="Forms\LabelSetsForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Objects\" />
