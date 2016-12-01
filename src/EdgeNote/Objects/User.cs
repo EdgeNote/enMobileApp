@@ -15,5 +15,7 @@ namespace EdgeNote.Library.Objects
 
         public string UserType { get; set; }
 
+        public bool Active { get; set; }
+
     }
 }

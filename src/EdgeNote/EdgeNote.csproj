@@ -93,6 +93,9 @@
     <Compile Include="Forms\UserForm.cs" />
     <Compile Include="Forms\AccountForm.cs" />
     <Compile Include="Forms\LabelSetsForm.cs" />
+    <Compile Include="ResponseObjects\CreateUserResponse.cs" />
+    <Compile Include="ResponseObjects\UpdateUserResponse.cs" />
+    <Compile Include="Objects\Account.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Objects\" />

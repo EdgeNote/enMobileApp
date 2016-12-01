@@ -17,6 +17,23 @@ namespace EdgeNote.UI.Managers
             m_ENManager = _manager;
         }
 
+        public LoginResponse Login(string username, string password)
+        {
+            return null;
+        }
+
+        public CreateUserResponse CreateUser(User _user, string _initialPassword)
+        {
+            return null;
+        }
+
+        public UpdateUserResponse UpdateUser(User _user)
+        {
+
+        }
+
+
+
         /// <summary>
         /// Returns a list of the sync sets that this machine needs
         /// </summary>
@@ -32,7 +49,7 @@ namespace EdgeNote.UI.Managers
         /// </summary>
         /// <returns>The sync set.</returns>
         /// <param name="syncSet">Sync set.</param>
-        public SyncSet GetSyncSet(long syncSet)
+        public SyncSet GetSyncSet(long _syncSet)
         {
             return null;
         }
@@ -42,12 +59,12 @@ namespace EdgeNote.UI.Managers
         /// </summary>
         /// <returns>The sync set.</returns>
         /// <param name="syncSet">Sync set.</param>
-        public SaveSyncSetResponse SaveSyncSet(SyncSet syncSet)
+        public SaveSyncSetResponse SaveSyncSet(SyncSet _syncSet)
         {
             return null;
         }
 
-        public void Log(string prefix, string _message)
+        public void Log(string _prefix, string _message)
         {
             try
             {
